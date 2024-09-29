@@ -1,0 +1,258 @@
+@import url("Normalize.css");
+
+:root {
+    --frame-width: 400px;
+    --frame-height: 180px;
+
+    --dpad-top: 15px;
+    --dpad-left: 5px;
+    --abxy-size: 25px;
+    --dpad-size: 25px;
+    --dpad-offset: 20px;
+
+    --shoulder-top: 10px;
+    --shoulder-left: 75px;
+    --shoulder-height: 20px;
+    --shoulder-width: 60px;
+
+    --back-btn-top: 95px;
+    --back-btn-left: 15px;
+    --back-btn-height: 25px;
+    --back-btn-width: 45px;
+    --back-btn-offset: 35px;
+
+    --button-color: #252525;
+    --pressed-color: #FF0000;
+
+    --pads-top: 105px;
+    --pads-left: 75px;
+
+    --sticks-top: 40px;
+    --sticks-left: 95px;
+
+    --triggers-top: 60px;
+    --triggers-left: 52px;
+
+    --menu-btn-top: 25px;
+    --menu-btn-left: 140px;
+    --menu-btn-height: 20px;
+    --menu-btn-width: 50px;
+
+    --system-btn-top: 160px;
+    --system-btn-left: 10px;
+    --system-btn-height: 20px;
+    --system-btn-width: 55px;
+
+    --gyro-top: 130px;
+    --gyro-left: 155px;
+    --gyro-offset: 15px;
+}
+
+#controller-frame {
+    height: var(--frame-height);
+    width: var(--frame-width);
+    border: 1px solid black;
+}
+
+.input {
+    position: absolute;
+}
+
+.button {
+    background-color: var(--button-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.pressed {
+    background-color: var(--pressed-color);
+}
+
+.dpad {
+    top: var(--dpad-top);
+    left: var(--dpad-left);
+    height: var(--dpad-size);
+    width: var(--dpad-size);
+    border-radius: 10%;
+}
+
+#up {
+    left: calc(var(--dpad-left) + var(--dpad-offset));
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+#right {
+    top: calc(var(--dpad-top) + var(--dpad-offset));
+    left: calc(var(--dpad-left) + var(--dpad-offset)*2);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+#left {
+    top: calc(var(--dpad-top) + var(--dpad-offset));
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+#down {
+    top: calc(var(--dpad-top) + var(--dpad-offset)*2);
+    left: calc(var(--dpad-left) + var(--dpad-offset));
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+}
+
+.abxy {
+    top: var(--dpad-top);
+    left: calc(var(--frame-width) - var(--dpad-left) - var(--abxy-size));
+    height: var(--abxy-size);
+    width: var(--abxy-size);
+    border-radius: 50%;
+}
+
+#y {
+    left: calc(var(--frame-width) - var(--abxy-size) - var(--dpad-left) - var(--dpad-offset));
+}
+
+#b {
+    top: calc(var(--dpad-top) + var(--dpad-offset));
+
+}
+
+#x {
+    top: calc(var(--dpad-top) + var(--dpad-offset));
+    left: calc(var(--frame-width) - var(--abxy-size) - var(--dpad-left) - var(--dpad-offset)*2);
+}
+
+#a {
+    top: calc(var(--dpad-top) + var(--dpad-offset)*2);
+    left: calc(var(--frame-width) - var(--abxy-size) - var(--dpad-left) - var(--dpad-offset));
+}
+
+
+.shoulder {
+    top: var(--shoulder-top);
+    left: var(--shoulder-left);
+    height: var(--shoulder-height);
+    width: var(--shoulder-width);
+}
+
+#lShoulder {
+    border-top-left-radius: 10px;
+}
+
+#rShoulder {
+    left: calc(var(--frame-width) - var(--shoulder-left) - var(--shoulder-width));
+    border-top-right-radius: 10px;
+}
+
+
+.menu {
+    top: var(--menu-btn-top);
+    left: var(--menu-btn-left);
+    height: var(--menu-btn-height);
+    width: var(--menu-btn-width);
+    border-radius: 10px;
+}
+
+#start {
+    left: calc(var(--frame-width) - var(--menu-btn-left) - var(--menu-btn-width));
+}
+
+.system {
+    top: var(--system-btn-top);
+    left: var(--system-btn-left);
+    height: var(--system-btn-height);
+    width: var(--system-btn-width);
+    border-radius: 8px;
+}
+
+#dots {
+    left: calc(var(--frame-width) - var(--system-btn-left) - var(--system-btn-width));
+}
+
+#steam {
+    font-size: 14px;
+}
+
+.back {
+    top: var(--back-btn-top);
+    left: var(--back-btn-left);
+    height: var(--back-btn-height);
+    width: var(--back-btn-width);
+    border-radius: 10%;
+}
+
+#L4 {
+    border-top-left-radius: 10px;
+}
+
+#L5 {
+    top: calc(var(--back-btn-top) + var(--back-btn-offset));
+}
+
+#R4 {
+    left: calc(var(--frame-width) - var(--back-btn-left) - var(--back-btn-width));
+    border-top-right-radius: 10px;
+}
+
+#R5 {
+    top: calc(var(--back-btn-top) + var(--back-btn-offset));
+    left: calc(var(--frame-width) - var(--back-btn-left) - var(--back-btn-width));
+}
+
+
+.linear {
+    transform: rotate(270deg);
+}
+
+.dst {
+    left: var(--triggers-left);
+    top: var(--triggers-top);
+}
+
+#rTrigger {
+    left: calc(var(--frame-width) - var(--triggers-left) - 60px);
+}
+
+
+.planar.pressure {
+    top: var(--pads-top);
+    left: var(--pads-left);
+    border-radius: 10%;
+}
+
+#rTrackPad {
+    left: calc(var(--frame-width) - var(--pads-left) - 75px);
+}
+
+
+.cap {
+    top: var(--sticks-top);
+    left: var(--sticks-left);
+    border-radius: 50%;
+}
+
+#rStick {
+    left: calc(var(--frame-width) - var(--sticks-left) - 60px);
+}
+
+.gyro {
+    top: var(--gyro-top);
+    left: var(--gyro-left);
+}
+
+#pitch {
+    left: calc(var(--gyro-left) + var(--gyro-offset));
+}
+
+#pitch::after {
+    content: "pitch";
+}
+
+#yaw {
+    left: calc(var(--gyro-left) + var(--gyro-offset)*2);
+}

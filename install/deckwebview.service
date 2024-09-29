@@ -1,0 +1,11 @@
+[Unit]
+Description=deckwebview input hook service
+After=sockets.target
+
+[Service]
+Type=exec
+ExecStart=%h/Applications/deckwebview/deckwebview -h 127.0.0.1:49753
+WorkingDirectory=/home/deck/Applications/deckwebview
+
+[Install]
+WantedBy=default.target
